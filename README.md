@@ -1,6 +1,6 @@
 # MongoDB
 
-Official Docker Image of [Synaps.is](https://synaps.is)
+Official Docker MongoDB Image of [Synaps.is](https://synaps.is)
 
 ## Docker Image content
 
@@ -9,32 +9,16 @@ Official Docker Image of [Synaps.is](https://synaps.is)
 ## Dockerfile Example
 
 ```dockerfile
-FROM syis/php-nginx:alpine-7.4
-
-RUN mkdir -p /var/www/app
-WORKDIR /var/www/app
-
-# Install composer packages
-COPY composer.json ./
-COPY composer.lock ./
-RUN composer install --no-scripts --no-autoloader --no-interaction --no-progress
-
-# Copy application files
-COPY . ./
-
-RUN composer dump-autoload --optimize
-
-# Copy nginx default virtual host
-COPY docker/nginx/default.conf /etc/nginx/conf.d/
+FROM syis/mongo:4.4.2-bionic
 
 # Expose ports listened by your "default.conf"
-EXPOSE 80
+EXPOSE 27017
 ```
 
 ## Links
 
-- [Docker Hub](https://hub.docker.com/r/syis/php-nginx)
+- [Docker Hub](https://hub.docker.com/r/syis/mongo)
 
 ## Tags
 
-- [alpine-7.4](https://github.com/synapsis-official/docker_php_nginx/tree/alpine-7.4)
+- [4.4.2-bionic](https://github.com/synapsis-official/docker_mongo/tree/4.4.2-bionic)
