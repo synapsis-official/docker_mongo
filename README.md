@@ -11,7 +11,14 @@ Official Docker MongoDB Image of [Synaps.is](https://synaps.is)
 ```dockerfile
 FROM syis/mongo:4.4.2-bionic
 
-# Expose ports listened by your "default.conf"
+ENV MONGO_DB_1_NAME='db_name'
+ENV MONGO_DB_1_USER='db_user'
+ENV MONGO_DB_1_PASSWORD='db_password'
+
+ENV MONGO_DB_2_NAME='db_2_name'
+ENV MONGO_DB_2_USER='db_2_user'
+ENV MONGO_DB_2_PASSWORD='db_2_password'
+
 EXPOSE 27017
 ```
 
