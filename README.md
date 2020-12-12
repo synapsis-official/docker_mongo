@@ -11,6 +11,15 @@ Official Docker MongoDB Image of [Synaps.is](https://synaps.is)
 ```dockerfile
 FROM syis/mongo:4.4.2-bionic
 
+# An initialization script creates the needed
+# databases by reading the environments named:
+# - MONGO_DB_x_NAME
+# - MONGO_DB_x_USER
+# - MONGO_DB_x_PASSWORD
+# (where x is an incremental integer)
+# The script cycle over the numbers (by starting from 1),
+# until it NOT find a variable named MONGO_DB_i_NAME
+
 ENV MONGO_DB_1_NAME='db_name'
 ENV MONGO_DB_1_USER='db_user'
 ENV MONGO_DB_1_PASSWORD='db_password'
