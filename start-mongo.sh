@@ -29,7 +29,7 @@ function init() {
 }
 
 # Start the primary process and put it in the background
-mongod &
+docker-entrypoint.sh mongod &
 
 # Start the initialization process
 init
