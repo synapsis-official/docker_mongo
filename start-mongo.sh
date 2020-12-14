@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# turn on bash's job control
+set -m
+
 function init() {
   echo "[MongoDB] checking service..."
   sleep 1.5
@@ -25,6 +28,12 @@ function init() {
   done
 }
 
-init &
+# Start the primary process and put it in the background
+mongod &
 
-mongod
+# Start the initialization process
+init
+
+# now we bring the primary process back into the foreground
+# and leave it there
+fg %1
