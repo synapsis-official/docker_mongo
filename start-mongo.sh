@@ -22,7 +22,7 @@ function init() {
     fi
     echo "const db_name='${db_name}'; const db_user='${db_user}'; const db_pwd='${db_pwd}'; "
     mongo --eval "const db_name='${db_name}'; const db_user='${db_user}'; const db_pwd='${db_pwd}'; " "${js_script}"
-    echo "[MongoDB] created db='${db_name}', user=''${db_user}"
+    echo "[MongoDB] created: db '${db_name}'; user '${db_user}'"
   done
 }
 
