@@ -1,6 +1,6 @@
 # MongoDB
 
-Official Docker MongoDB Image of [Synaps.is](https://synaps.is)
+Official Docker MongoDB Image of [Synapsis](https://syis.eu)
 
 ## Docker Image content
 
